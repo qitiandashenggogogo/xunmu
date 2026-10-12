@@ -1,0 +1,163 @@
+{
+  "cancel": {
+    "immediateIsCancelled": true,
+    "immediateKeyCount": 0,
+    "immediateMs": 0.001,
+    "sweep": [
+      {
+        "checksBeforeCancel": 1,
+        "elapsedMs": 0.005,
+        "isCancelled": true,
+        "keyCount": 0
+      },
+      {
+        "checksBeforeCancel": 3,
+        "elapsedMs": 0.337,
+        "isCancelled": true,
+        "keyCount": 0
+      },
+      {
+        "checksBeforeCancel": 10,
+        "elapsedMs": 1.594,
+        "isCancelled": true,
+        "keyCount": 0
+      },
+      {
+        "checksBeforeCancel": 30,
+        "elapsedMs": 5.181,
+        "isCancelled": true,
+        "keyCount": 0
+      },
+      {
+        "checksBeforeCancel": 100,
+        "elapsedMs": 14.329,
+        "isCancelled": true,
+        "keyCount": 0
+      },
+      {
+        "checksBeforeCancel": 1000,
+        "elapsedMs": 18.052,
+        "isCancelled": false,
+        "keyCount": 134885
+      }
+    ],
+    "uncancelledHitCount": 134885,
+    "uncancelledMs": 16.165
+  },
+  "engineBuildMs": 1153.818,
+  "engineEntryCount": 134885,
+  "generatedAtUTC": "2026-10-09T14:19:51Z",
+  "generation": 12472,
+  "memory": {
+    "peakResidentBytes": 370982912,
+    "peakResidentMB": 353.797
+  },
+  "mode": "real-readonly",
+  "notes": [
+    "first-observed（首次观察）：这是本次运行对目录树的第一次遍历，不是冷缓存基准。\n一次目录遍历就是真实的目录元数据读取（stat/目录枚举），因此包含真实硬盘读，\n不声称“零硬盘读”。重跑同一目录会受系统缓存影响而更快。",
+    "第二遍是纯元数据扫描（只读目录项元数据，不读文件内容、不写盘）。\n两遍之间的差异数是该盘在这段时间里的真实变化；卷上有并发改动时，\n差异数非零属于正常现象，不据此判定算法失败。",
+    "索引数据库只写到 --report-dir 指定的本机目录，并通过 st_dev + 卷 UUID 双重校验，\n确认与 --real-root 不在同一设备后才开始。扫描全程只读：不创建、不修改、不删除\n扫描根下的任何文件，也不改系统设置。",
+    "报告只含计数、统计与卷事实；扫描根下的文件路径明细既没进 JSON，也没进终端输出。",
+    "首扫耗时包含真实目录元数据读取，不代表冷缓存速度，也不代表机械盘随机寻道性能。",
+    "共享记录已去除设备 UUID、本机索引路径和原始文件路径。"
+  ],
+  "queries": [
+    {
+      "firstObservedMs": 18.003,
+      "hitCount": 20261,
+      "id": "hanzi-1",
+      "label": "单字中文",
+      "maxMs": 20.996,
+      "minMs": 18.612,
+      "p50Ms": 19.489,
+      "p95Ms": 20.996,
+      "samples": 5,
+      "text": "文"
+    },
+    {
+      "firstObservedMs": 22.461,
+      "hitCount": 15,
+      "id": "hanzi-2",
+      "label": "双字中文",
+      "maxMs": 20.415,
+      "minMs": 17.088,
+      "p50Ms": 19.27,
+      "p95Ms": 20.415,
+      "samples": 5,
+      "text": "报告"
+    },
+    {
+      "firstObservedMs": 22.546,
+      "hitCount": 131890,
+      "id": "letter-1",
+      "label": "单个拉丁字母",
+      "maxMs": 29.44,
+      "minMs": 20.904,
+      "p50Ms": 22.989,
+      "p95Ms": 29.44,
+      "samples": 5,
+      "text": "a"
+    },
+    {
+      "firstObservedMs": 20.889,
+      "hitCount": 2854,
+      "id": "ext-jpg",
+      "label": "扩展名 jpg",
+      "maxMs": 21.13,
+      "minMs": 19.945,
+      "p50Ms": 20.582,
+      "p95Ms": 21.13,
+      "samples": 5,
+      "text": "jpg"
+    },
+    {
+      "firstObservedMs": 17.311,
+      "hitCount": 134885,
+      "id": "all",
+      "label": "空查询（全量）",
+      "maxMs": 19.798,
+      "minMs": 16.516,
+      "p50Ms": 17.6,
+      "p95Ms": 19.798,
+      "samples": 5,
+      "text": ""
+    }
+  ],
+  "reopen": {
+    "duplicatedKeysFound": false,
+    "engineBuildMsAfterReopen": 1154.981,
+    "entryCountAfterReopen": 134885,
+    "entryCountBeforeReopen": 134885,
+    "queriesMatchAfterReopen": true,
+    "reopenLoadMs": 165.625
+  },
+  "scan": {
+    "completeBatches": 12850,
+    "directoriesScanned": 12850,
+    "entriesSeen": 134885,
+    "failedBatches": 0,
+    "firstPassMs": 36158.602,
+    "progressIntervalSeconds": 5,
+    "progressLinesEmitted": 7,
+    "rowsApplied": 134885,
+    "scanReturnedNormally": true
+  },
+  "schemaVersion": 1,
+  "selfCheckFailures": [],
+  "verify": {
+    "added": 0,
+    "changed": 0,
+    "note": "第二遍是纯元数据扫描（只读目录项元数据，不读文件内容、不写盘）。\n两遍之间的差异数是该盘在这段时间里的真实变化；卷上有并发改动时，\n差异数非零属于正常现象，不据此判定算法失败。",
+    "ran": true,
+    "removed": 0,
+    "secondPassMs": 5835.466,
+    "totalChanges": 0,
+    "unchanged": 134885
+  },
+  "volume": {
+    "fileSystem": "exfat",
+    "isOnline": true,
+    "reportLocationDecision": "allowed",
+    "requiresFullVerification": true
+  }
+}

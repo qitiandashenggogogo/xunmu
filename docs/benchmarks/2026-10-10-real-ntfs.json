@@ -1,0 +1,174 @@
+{
+  "cancel": {
+    "immediateIsCancelled": true,
+    "immediateKeyCount": 0,
+    "immediateMs": 0,
+    "sweep": [
+      {
+        "checksBeforeCancel": 1,
+        "elapsedMs": 0.072,
+        "isCancelled": true,
+        "keyCount": 0
+      },
+      {
+        "checksBeforeCancel": 3,
+        "elapsedMs": 0.305,
+        "isCancelled": true,
+        "keyCount": 0
+      },
+      {
+        "checksBeforeCancel": 10,
+        "elapsedMs": 1.643,
+        "isCancelled": true,
+        "keyCount": 0
+      },
+      {
+        "checksBeforeCancel": 30,
+        "elapsedMs": 8.993,
+        "isCancelled": true,
+        "keyCount": 0
+      },
+      {
+        "checksBeforeCancel": 100,
+        "elapsedMs": 33.304,
+        "isCancelled": true,
+        "keyCount": 0
+      },
+      {
+        "checksBeforeCancel": 1000,
+        "elapsedMs": 129.459,
+        "isCancelled": true,
+        "keyCount": 0
+      }
+    ],
+    "uncancelledHitCount": 1026273,
+    "uncancelledMs": 133.235
+  },
+  "engineBuildMs": 7077.47,
+  "engineEntryCount": 1026273,
+  "generatedAtUTC": "2026-10-10T00:37:01Z",
+  "generation": 12392,
+  "independentVerification": {
+    "counts": {
+      "": 1026273,
+      "a": 975807,
+      "jpg": 78874,
+      "报告": 211,
+      "文": 969414
+    },
+    "rawNameAndRelativePathNFCUnicodeCasefoldCountsMatch": true,
+    "sqliteIntegrityCheck": "ok"
+  },
+  "memory": {
+    "peakResidentBytes": 1755742208,
+    "peakResidentMB": 1674.406
+  },
+  "mode": "real-readonly",
+  "notes": [
+    "first-observed（首次观察）：这是本次运行对目录树的第一次遍历，不是冷缓存基准。\n一次目录遍历就是真实的目录元数据读取（stat/目录枚举），因此包含真实硬盘读，\n不声称“零硬盘读”。重跑同一目录会受系统缓存影响而更快。",
+    "第二遍是纯元数据扫描（只读目录项元数据，不读文件内容、不写盘）。\n两遍之间的差异数是该盘在这段时间里的真实变化；卷上有并发改动时，\n差异数非零属于正常现象，不据此判定算法失败。",
+    "索引数据库只写到 --report-dir 指定的本机目录，并通过 st_dev + 卷 UUID 双重校验，\n确认与 --real-root 不在同一设备后才开始。扫描全程只读：不创建、不修改、不删除\n扫描根下的任何文件，也不改系统设置。",
+    "报告只含计数、统计与卷事实；扫描根下的文件路径明细既没进 JSON，也没进终端输出。",
+    "首扫耗时包含真实目录元数据读取，不代表冷缓存速度，也不代表机械盘随机寻道性能。",
+    "共享记录已去除设备 UUID、本机索引路径和原始文件路径。"
+  ],
+  "queries": [
+    {
+      "firstObservedMs": 116.969,
+      "hitCount": 969414,
+      "id": "hanzi-1",
+      "label": "单字中文",
+      "maxMs": 121.05,
+      "minMs": 109.278,
+      "p50Ms": 110.602,
+      "p95Ms": 121.05,
+      "samples": 5,
+      "text": "文"
+    },
+    {
+      "firstObservedMs": 133.37,
+      "hitCount": 211,
+      "id": "hanzi-2",
+      "label": "双字中文",
+      "maxMs": 134.622,
+      "minMs": 127.418,
+      "p50Ms": 128.128,
+      "p95Ms": 134.622,
+      "samples": 5,
+      "text": "报告"
+    },
+    {
+      "firstObservedMs": 99.251,
+      "hitCount": 975807,
+      "id": "letter-1",
+      "label": "单个拉丁字母",
+      "maxMs": 103.247,
+      "minMs": 94.612,
+      "p50Ms": 95.623,
+      "p95Ms": 103.247,
+      "samples": 5,
+      "text": "a"
+    },
+    {
+      "firstObservedMs": 86.087,
+      "hitCount": 78874,
+      "id": "ext-jpg",
+      "label": "jpg 子串（非扩展名筛选）",
+      "maxMs": 89.732,
+      "minMs": 87.881,
+      "p50Ms": 89.228,
+      "p95Ms": 89.732,
+      "samples": 5,
+      "text": "jpg"
+    },
+    {
+      "firstObservedMs": 91.312,
+      "hitCount": 1026273,
+      "id": "all",
+      "label": "空查询（全量）",
+      "maxMs": 169.946,
+      "minMs": 88.667,
+      "p50Ms": 109.266,
+      "p95Ms": 169.946,
+      "samples": 5,
+      "text": ""
+    }
+  ],
+  "reopen": {
+    "duplicatedKeysFound": false,
+    "engineBuildMsAfterReopen": 6741.461,
+    "entryCountAfterReopen": 1026273,
+    "entryCountBeforeReopen": 1026273,
+    "queriesMatchAfterReopen": true,
+    "reopenLoadMs": 17504.758
+  },
+  "scan": {
+    "completeBatches": 13416,
+    "directoriesScanned": 13416,
+    "entriesSeen": 1026273,
+    "failedBatches": 0,
+    "firstPassMs": 466027.457,
+    "progressIntervalSeconds": 5,
+    "progressLinesEmitted": 85,
+    "rowsApplied": 1026273,
+    "scanReturnedNormally": true
+  },
+  "schemaVersion": 1,
+  "selfCheckFailures": [],
+  "verify": {
+    "added": 0,
+    "changed": 0,
+    "note": "第二遍是纯元数据扫描（只读目录项元数据，不读文件内容、不写盘）。\n两遍之间的差异数是该盘在这段时间里的真实变化；卷上有并发改动时，\n差异数非零属于正常现象，不据此判定算法失败。",
+    "ran": true,
+    "removed": 0,
+    "secondPassMs": 248605.266,
+    "totalChanges": 0,
+    "unchanged": 1026273
+  },
+  "volume": {
+    "fileSystem": "tuxera_ntfs",
+    "isOnline": true,
+    "reportLocationDecision": "allowed",
+    "requiresFullVerification": true
+  }
+}

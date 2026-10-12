@@ -1,0 +1,250 @@
+{
+  "build" : {
+    "engineCount" : 1000000,
+    "engineInitMs" : 8467.171,
+    "peakResidentBytesAfterBuild" : 1156235264,
+    "snapshotEntryCount" : 1000000
+  },
+  "cancel" : {
+    "cancelledKeyCount" : 0,
+    "cancelledMs" : 0.001,
+    "isCancelled" : true,
+    "queryText" : "a",
+    "sweep" : [
+      {
+        "checksBeforeCancel" : 1,
+        "elapsedMs" : 0.021,
+        "isCancelled" : true,
+        "keyCount" : 0
+      },
+      {
+        "checksBeforeCancel" : 3,
+        "elapsedMs" : 0.276,
+        "isCancelled" : true,
+        "keyCount" : 0
+      },
+      {
+        "checksBeforeCancel" : 10,
+        "elapsedMs" : 1.273,
+        "isCancelled" : true,
+        "keyCount" : 0
+      },
+      {
+        "checksBeforeCancel" : 30,
+        "elapsedMs" : 4.042,
+        "isCancelled" : true,
+        "keyCount" : 0
+      },
+      {
+        "checksBeforeCancel" : 100,
+        "elapsedMs" : 14.23,
+        "isCancelled" : true,
+        "keyCount" : 0
+      },
+      {
+        "checksBeforeCancel" : 1000,
+        "elapsedMs" : 70.818,
+        "isCancelled" : true,
+        "keyCount" : 0
+      }
+    ],
+    "uncancelledHitCount" : 222511,
+    "uncancelledMs" : 72.601
+  },
+  "dataset" : {
+    "directoryCount" : 4000,
+    "entryCount" : 1000000,
+    "generateMs" : 1482.419,
+    "kind" : "synthetic",
+    "note" : "全部条目为内存合成；磁盘上没有创建对应文件，realFilesCreated 恒为 0",
+    "realFilesCreated" : 0,
+    "seed" : 1592614637
+  },
+  "environment" : {
+    "activeProcessorCount" : 10,
+    "osVersion" : "Version 26.6.2 (Build 25G83)",
+    "processName" : "SearchBench"
+  },
+  "generatedAtUTC" : "2026-10-09T10:55:16Z",
+  "memory" : {
+    "peakResidentBytes" : 1156235264,
+    "peakResidentMB" : 1102.672
+  },
+  "notes" : [
+    "数据集为合成条目，不代表任何真实磁盘文件数量或真实目录结构。",
+    "查询延迟为单次内存搜索耗时，不含磁盘 IO；真实端到端延迟受机械盘影响，需另测。",
+    "扫描吞吐（若启用）是在临时目录上创建的真实小文件，只反映本机当前卷，不外推到机械盘或外置盘。",
+    "未覆盖：外置盘离线、跨 Windows/跨系统元数据、FSEvents 故障补扫的端到端时延。"
+  ],
+  "persistence" : {
+    "databasePath" : "",
+    "directoryBatchCount" : 0,
+    "entryCount" : 0,
+    "note" : "未启用（加 --persist 运行）",
+    "ran" : false,
+    "removedAfterRun" : true,
+    "reopenAndLoadMs" : 0,
+    "reopenMatched" : true,
+    "reopenedEntryCount" : 0,
+    "writeMs" : 0
+  },
+  "queries" : [
+    {
+      "engineBuildMs" : 8074.741,
+      "firstQueryMs" : 124.322,
+      "hitCount" : 31078,
+      "id" : "hanzi-1",
+      "label" : "单字中文",
+      "measured" : {
+        "maxMs" : 80.733625,
+        "minMs" : 78.505459,
+        "p50Ms" : 79.294833,
+        "p95Ms" : 80.733625,
+        "samples" : 5
+      },
+      "text" : "文",
+      "warmup" : {
+        "maxMs" : 0,
+        "minMs" : 0,
+        "p50Ms" : 0,
+        "p95Ms" : 0,
+        "samples" : 0
+      }
+    },
+    {
+      "engineBuildMs" : 7998.154,
+      "firstQueryMs" : 114.073,
+      "hitCount" : 31331,
+      "id" : "hanzi-2",
+      "label" : "双字中文",
+      "measured" : {
+        "maxMs" : 81.56775,
+        "minMs" : 79.598333,
+        "p50Ms" : 80.881125,
+        "p95Ms" : 81.56775,
+        "samples" : 5
+      },
+      "text" : "报告",
+      "warmup" : {
+        "maxMs" : 0,
+        "minMs" : 0,
+        "p50Ms" : 0,
+        "p95Ms" : 0,
+        "samples" : 0
+      }
+    },
+    {
+      "engineBuildMs" : 8220.275,
+      "firstQueryMs" : 107.812,
+      "hitCount" : 222511,
+      "id" : "letter-1",
+      "label" : "单个拉丁字母",
+      "measured" : {
+        "maxMs" : 78.480625,
+        "minMs" : 72.939209,
+        "p50Ms" : 74.022041,
+        "p95Ms" : 78.480625,
+        "samples" : 5
+      },
+      "text" : "a",
+      "warmup" : {
+        "maxMs" : 0,
+        "minMs" : 0,
+        "p50Ms" : 0,
+        "p95Ms" : 0,
+        "samples" : 0
+      }
+    },
+    {
+      "engineBuildMs" : 8249.317,
+      "firstQueryMs" : 117.221,
+      "hitCount" : 28033,
+      "id" : "long-word",
+      "label" : "长单词",
+      "measured" : {
+        "maxMs" : 81.364875,
+        "minMs" : 80.489125,
+        "p50Ms" : 81.167291,
+        "p95Ms" : 81.364875,
+        "samples" : 5
+      },
+      "text" : "presentation",
+      "warmup" : {
+        "maxMs" : 0,
+        "minMs" : 0,
+        "p50Ms" : 0,
+        "p95Ms" : 0,
+        "samples" : 0
+      }
+    }
+  ],
+  "scan" : {
+    "allBatchesComplete" : true,
+    "directoryBatchCount" : 0,
+    "directoryCount" : 0,
+    "entriesIndexed" : 0,
+    "entriesPerSecondFirstPass" : 0,
+    "firstScanMs" : 0,
+    "fixturePath" : "",
+    "fixtureRemovedAfterRun" : true,
+    "note" : "未启用（加 --scan-files N 运行；默认不创建任何真实文件）",
+    "ran" : false,
+    "realFilesCreated" : 0,
+    "secondScanMs" : 0,
+    "symlinksFollowed" : 0
+  },
+  "schemaVersion" : 1,
+  "selfCheckFailures" : [
+
+  ],
+  "sorts" : [
+    {
+      "ascending" : true,
+      "elapsedMs" : 74.259,
+      "hitCount" : 222511,
+      "sort" : "name"
+    },
+    {
+      "ascending" : false,
+      "elapsedMs" : 347.798,
+      "hitCount" : 222511,
+      "sort" : "name"
+    },
+    {
+      "ascending" : true,
+      "elapsedMs" : 73.535,
+      "hitCount" : 222511,
+      "sort" : "path"
+    },
+    {
+      "ascending" : false,
+      "elapsedMs" : 367.926,
+      "hitCount" : 222511,
+      "sort" : "path"
+    },
+    {
+      "ascending" : true,
+      "elapsedMs" : 312.91,
+      "hitCount" : 222511,
+      "sort" : "size"
+    },
+    {
+      "ascending" : false,
+      "elapsedMs" : 319.484,
+      "hitCount" : 222511,
+      "sort" : "size"
+    },
+    {
+      "ascending" : true,
+      "elapsedMs" : 207.742,
+      "hitCount" : 222511,
+      "sort" : "modified"
+    },
+    {
+      "ascending" : false,
+      "elapsedMs" : 214.278,
+      "hitCount" : 222511,
+      "sort" : "modified"
+    }
+  ]
+}

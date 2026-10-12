@@ -1,0 +1,35 @@
+.build/
+dist/
+.DS_Store
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+benchmarks/local-*.json
+
+# 本地诊断产物：可能含本机路径、卷 UUID、文件名或崩溃现场，不入库。
+diagnostics/
+*.ips
+*.crash
+DiagnosticReports/
+Logs/
+*.log
+
+# 签名与凭据：证书、描述文件、私钥一律不入库。
+*.p12
+*.cer
+*.certSigningRequest
+*.provisionprofile
+*.mobileprovision
+*.p8
+*.pem
+*.key
+PrivateKeys/
+*.env
+secrets*.json
+
+# 构建与打包中间产物（发布件由主控另行归档，不进仓库）。
+Package/
+*.xcarchive
+*.dSYM.zip
+*.app/
+*.pkg
