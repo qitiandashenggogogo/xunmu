@@ -26,3 +26,14 @@ FSEvents 根路径使用 POSIX realpath；Foundation 的 `/var` URL 形式不能
 
 真实鼠标验收发现右键不弹菜单。`tableView(_:rightMouseDown:)` 不是 NSTableViewDelegate 方法，放在控制器里不会收到事件。
 解决：ResultsTableView 覆写 `rightMouseDown(with:)` 并转交控制器；回归用真实 NSEvent 验证视图分发，不能只直接调用控制器的菜单生成函数。
+
+
+## 2026-10-12：公开源码快照与本地历史分开
+
+问题：早期基准报告在旧提交中保留过机器临时目录。只修工作树并直接推原历史，仍会把旧路径公开。
+解决：保留原本地 Git 历史，不改写、不直接推送；公开仓库 `qitiandashenggogogo/xunmu` 从检查后的源码快照建立新历史。后续发布需在公开仓库历史上提交审查过的变更，不把原开发历史合并进去。
+
+## 2026-10-12：菜单禁用与文案长度需要真实窗口验证
+
+问题：只写 `NSMenuItem.isEnabled=false` 仍可能被 AppKit 自动启用；长一点的「只看文件夹」在原有工具栏宽度下被裁成省略号。
+解决：菜单目标明确实现 `NSMenuItemValidation`，按实际更新配置或报告处理器返回可用性；真实启动冒烟在 `NSMenu.update()` 后断言未接通菜单仍禁用。复选框最小宽度跟随内容自然尺寸，真实布局回归检查完整文字所需宽度；签名包截图确认文字完整。
